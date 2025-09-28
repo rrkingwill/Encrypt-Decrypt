@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 
 class Encrypter {
 public:
@@ -16,11 +17,13 @@ public:
     //Generates random key
     std::string keygen();
     std::string encrypt(std::string, std::string);
-
+    unsigned long sMod(std::string, unsigned long);
+    std::string toNumStr(std::string);
     
 private:
-    short keySize;
+    int keySize;
     std::string key;
+    std::stringstream ss;
 
 };
 
